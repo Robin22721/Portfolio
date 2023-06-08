@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Portfolio/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css
+/Portfolio/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css

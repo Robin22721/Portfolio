@@ -1,22 +1,191 @@
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
     font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    /*    background-color: rgb(91, 91, 91);*/
+    background: linear-gradient(135deg,rgb(70, 70, 91), rgb(91, 91, 91));
+    color: #999999;
+}
+
+#menu-toggle {
+    color: #999999;
+    position: relative;
+    top: 30px;
+    left: -35px;
+    transform: rotate(90deg);
+    background: linear-gradient(10deg, rgb(20, 10, 40), rgb(50, 50, 50));
+    height: 30px;
+    width: 50px;
+    border: hidden;
+}
+
+#menu-toggle:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: rgb(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#wrapper {
+    position: fixed;
+    padding-left: 250px;
+    margin-left: -20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper {
+    position: inherit;
+    left: 250px;
+    width: 200px;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: linear-gradient(70deg, rgb(20, 10, 40), rgb(50, 50, 50));
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    #wrapper {
+        margin-left: -220px;
+    }
+
+    #sidebar-wrapper {
+        margin-left: -500px;
+    }
+}
+
+.text-right {
+    text-align: right;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.small-text {
+    font-size: 12px;
+}
+
+.page {
+    padding-top: 11vh;
+}
+
+.page-text {
+    font-size: 18px;
+}
+
+hr {
+    z-index: -200;
+    position: relative;
+}
+
+.grid-container {
+    position: relative;
+    display: grid;
+    top: 10vh;
+    left: 30%;
+}
+
+.grid-item {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 0px;
+    line-height: 0px;
+    color: rgb(213, 213, 213)
+}
+
+button:disabled {
+    background-color: rgb(178, 178, 178);
+}
+
+.blue {
+    color: blue;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.navy {
+    color: navy;
+}
+
+.maroon {
+    color: maroon;
+}
+
+.cyan {
+    color: darkcyan;
+}
+
+.black {
+    color: black;
+}
+
+.gray {
+    color: rgb(43, 43, 43)
 }

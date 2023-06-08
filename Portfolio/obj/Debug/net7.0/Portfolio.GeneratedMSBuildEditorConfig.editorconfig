@@ -16,20 +16,28 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\R.d.veer\source\repos\Portfolio\Portfolio
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/Extra.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXh0cmEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+[C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/Portfolio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGZvbGlvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/R.d.veer/source/repos/Portfolio/Portfolio/Pages/_ViewImports.cshtml]

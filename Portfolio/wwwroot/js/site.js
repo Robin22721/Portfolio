@@ -29,13 +29,21 @@ class Tile {
     }
 }
 
+//will store the tiles
 var tiles = [];
+//size of the grid in both x and y
 var gridSize = 20;
-var totalMines = 60;
+//amount of mines on the grid
+var totalMines = 20;
+
+//keeps track of how many mines there are on the grid when making mines
 var currentMines = 0;
+//used for checking adjacent tiles
 var checkingTiles = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]];
+//colors for the numbers
 var colors = ["blue", "green", "red", "navy", "maroon", "cyan", "black", "gray"];
 
+//creates the grid
 for (var i = 0; i < gridSize; i++) {
     tiles[i] = [];
     for (var j = 0; j < gridSize; j++) {
@@ -45,6 +53,7 @@ for (var i = 0; i < gridSize; i++) {
         tiles[i][j][1] = new Tile();
     }
 }
+
 
 SetMines();
 SetTileNumbers();

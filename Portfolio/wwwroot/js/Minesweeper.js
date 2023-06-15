@@ -69,7 +69,7 @@ function CallEvents() {
         var distance = Math.sqrt(Math.pow(currentX - startX, 2) + Math.pow(currentY - startY, 2));
 
         // If the distance exceeds a threshold, consider it as scrolling action
-        if (distance > 30) {
+        if (distance > 15) {
             scrolling = true;
             clearTimeout(thisEvent.downTimer);
         }
@@ -127,8 +127,8 @@ function CreateGrid() {
 
 // Gets the user inputs and stores them
 function GetUserInputs() {
-    gridSizeX = $(".height").val();
-    gridSizeY = $(".width").val();
+    gridSizeX = $(".width").val();
+    gridSizeY = $(".height").val();
     totalMines = $(".mine-amount").val();
     currentMines = 0;
 }

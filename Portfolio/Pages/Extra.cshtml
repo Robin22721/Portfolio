@@ -1,8 +1,23 @@
 ﻿@page
 @model ExtraModel
-@{
-}
 
-<div id="grid" class="grid-container" oncontextmenu="return false">
-
+<div class="options">
+    <div>
+        <p>hoogte</p>
+        <input class="height" type="text" value="20"/>
+    </div>
+    <div>
+        <p>breedte</p>
+        <input class="width" type="text" value="20"/>
+    </div>
+    <div>
+        <p>aantal mijnen</p>
+        <input class="mine-amount" type="text" value="40"/>
+    </div>
+    <button class="make-grid">Maak aan</button>
 </div>
+<div id="grid" class="grid-container" oncontextmenu="return false"></div>
+
+@section Scripts {
+    <script src="~/js/Minesweeper.js" asp-append-version="true"></script>
+}

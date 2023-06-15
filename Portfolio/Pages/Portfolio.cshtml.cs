@@ -5,8 +5,6 @@ namespace Portfolio.Pages
 {
     public class PortfolioModel : PageModel
     {
-        public void OnGet()
-        {
-        }
+
     }
 }

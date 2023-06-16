@@ -13,9 +13,5 @@ namespace Portfolio.Pages
         }
 
         public int Leeftijd { get; set; }
-
-        public void OnGet()
-        {
-        }
     }
 }

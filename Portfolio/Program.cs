@@ -25,4 +25,3 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
-Debug.WriteLine("a");

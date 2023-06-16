@@ -60,7 +60,7 @@ function CallEvents() {
             placedFlag = false;
             return;
         }
-        RevealTile(thisEvent);
+        RevealTile(thisEvent, 0);
     }).on("touchmove", function (event) {
         var currentX = event.touches[0].clientX;
         var currentY = event.touches[0].clientY;
@@ -76,7 +76,7 @@ function CallEvents() {
     });
 
     $(".grid-container").css({ "width": Math.min(screen.width - 100, gridSizeX * 20), "grid-template-columns": "auto ".repeat(gridSizeX) });
-    $(".grid-item").css({ "height": "20px", width: "20px" });
+    $(".scroll-container").css({ "width": Math.min(screen.width - 100, gridSizeX * 20)+20 });
 }
 
 $(".make-grid").on("click", function () {
@@ -84,7 +84,6 @@ $(".make-grid").on("click", function () {
 });
 
 $(document).ready(function () {
-
     // Check element size on window resize
     $(window).on('resize', function () {
         checkElementSize();
@@ -95,7 +94,7 @@ $(document).ready(function () {
 
 // Sets scrollbars on the grid if the grid exceeds max lengths
 function checkElementSize() {
-    var element = $('.grid-container');
+    var element = $('.scroll-container');
     var viewportHeight = $(window).height();
     var elementHeight = element.outerHeight();
     var elementWidth = element.outerWidth();
@@ -107,7 +106,7 @@ function checkElementSize() {
         // Element is larger than the screen, enable scrolling if it was disabled previously
         element.css('overflow-y', 'auto');
     }
-    if (elementWidth != screen.width - 100) {
+    if (Math.round(elementWidth) != screen.width - 100) {
         element.css('overflow-x', 'hidden');
     } else {
         element.css('overflow-x', 'auto');
@@ -123,6 +122,7 @@ function CreateGrid() {
     SetTileNumbers();
     CallEvents();
     checkElementSize();
+    ShowMinesLeft();
 }
 
 // Gets the user inputs and stores them
@@ -155,7 +155,7 @@ function FillGrid() {
 }
 
 // This runs whenever you click an unrevealed tile with LMB
-function RevealTile(tile) {
+function RevealTile(tile, callStack) {
     if (tile[0].getAttribute("disabled")) return;
     var coord = GetTileCoordinates(tile);
     var tileValue = tiles[coord[0]][coord[1]];
@@ -173,10 +173,15 @@ function RevealTile(tile) {
         tile[0].classList.add(colors[tileValue[1].number != -1 ? tileValue[1].number - 1 : 6]);
 
     if (tileValue[1].number == 0) {
+        var callStackAmount = ++callStack;
         checkingTiles.forEach(function (v) {
             if (IsAtBorder(coord[0], coord[1], v)) return;
             var tileToCheck = [tiles[coord[0] + v[0]][coord[1] + v[1]][0]];
-            RevealTile(tileToCheck);
+            if (!(callStackAmount % 1000)) {
+                setTimeout(RevealTile.bind(null, tileToCheck, 0), 0);
+            } else {
+                RevealTile(tileToCheck, callStackAmount);
+            }
         })
     }
 }
@@ -188,10 +193,13 @@ function PlaceFlag(tile) {
     var tileValue = tiles[coord[0]][coord[1]];
     if (tileValue[1].flagged) {
         tile.text(" ");
+        currentMines++;
     } else {
         tile.append('<i class="bi bi-flag-fill"></i>').addClass("black");
+        currentMines--;
     }
     tileValue[1].flagged = !tileValue[1].flagged;
+    ShowMinesLeft();
 }
 
 // Gets the coordinates from a tile's data-coord value
@@ -226,6 +234,11 @@ function SetTileNumbers() {
             SetAdjacentMines(i, j);
         }
     }
+}
+
+// Shows the user how many mines are "left"
+function ShowMinesLeft() {
+    $(".mines-left").text("Mijnen over: " + currentMines);
 }
 
 // Get sum of adjacent mines for said tile

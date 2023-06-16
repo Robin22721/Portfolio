@@ -1,6 +1,7 @@
 ﻿@page
 @model ExtraModel
 
+    <p>Om te laten zien dat ik het kan en wil moet ik het wel bewijzen! Ik heb minesweeper deels nagemaakt helemaal in javascript.</p>
 <div class="options">
     <div>
         <p>hoogte</p>
@@ -16,8 +17,10 @@
     </div>
     <button class="make-grid">Maak aan</button>
 </div>
-<div id="grid" class="grid-container" oncontextmenu="return false"></div>
-
+<div class="scroll-container">
+    <div id="grid" class="grid-container" oncontextmenu="return false"></div>
+</div>
+<p class="mines-left"></p>
 @section Scripts {
     <script src="~/js/Minesweeper.js" asp-append-version="true"></script>
 }
